@@ -1,8 +1,9 @@
 <template>
   <Header />
-  <div>
-    <Sidebar />
-    <slot />
+  <div class="container flex w-full">
+    <Aside />
+    <div class="w-full border-2 border-red-200 h-96">
+      <slot />
+    </div>
   </div>
-  <Footer />
 </template>

@@ -1,7 +1,7 @@
 <template>
   <article class="relative w-full border-2 rounded-lg overflow-hidden bg-white">
     <div class="w-full h-36 overflow-hidden">
-      <img src="../assets/texnomart.png" alt="" class="" />
+      <img src="../assets/texnomart.png" alt="" class="w-full h-full object-cover" />
     </div>
     <span
       class="absolute top-1 left-1 px-3 p-2 rounded-md bg-red-200 text-xs text-red-500 font-bold"

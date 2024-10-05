@@ -1,0 +1,68 @@
+import img1 from "~/assets/images/card1.png";
+import img2 from "~/assets/images/card2.png";
+import img3 from "~/assets/images/card3.png";
+import img4 from "~/assets/images/card4.png";
+import img5 from "~/assets/images/card5.png";
+import img6 from "~/assets/images/card6.png";
+import img7 from "~/assets/images/card7.png";
+
+const cards = [
+  {
+    id: 1,
+    img: img1,
+    name: "Korzinka.uz",
+    text: "В четверг скидки на рыбу",
+    stock: "4%",
+    type: "Супермаркеты",
+  },
+  {
+    id: 2,
+    img: img2,
+    name: "MANGO",
+    text: "Акция 1+1",
+    stock: "3%",
+    type: "Магазины брендовой одежды",
+  },
+  {
+    id: 3,
+    img: img3,
+    name: "TEXNOMART",
+    text: "До — 60% на бытовую технику в ТЦ «Samarkan",
+    stock: "2%",
+    type: "Магазины электроники и бытов",
+  },
+  {
+    id: 4,
+    img: img4,
+    name: "Makro",
+    text: "При покупке CIF пачка губок Salixan БЕСПЛАТHO",
+    stock: "5%",
+    type: "Супермаркеты",
+  },
+  {
+    id: 5,
+    img: img5,
+    name: "Gosty",
+    text: "Каждый вторник — 20% на все меню",
+    stock: "6%",
+    type: "Рестораны",
+  },
+  {
+    id: 6,
+    img: img6,
+    name: "Shosh",
+    text: "Скидки на еду и напитки",
+    stock: "3.5%",
+    type: "Кафе",
+  },
+  {
+    id: 7,
+    img: img7,
+    name: "Petrovich",
+    text: "Ланч по выгодной цене и 2% кешбэк по промокоду",
+    stock: "3.5%",
+    type: "Рестораны",
+  },
+];
+
+export { cards };

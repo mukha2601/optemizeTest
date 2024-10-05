@@ -1,12 +1,6 @@
-<script setup lang="ts">
-const items = [
-  "https://picsum.photos/600/800?random=1",
-  "https://picsum.photos/600/800?random=2",
-  "https://picsum.photos/600/800?random=3",
-  "https://picsum.photos/600/800?random=4",
-  "https://picsum.photos/600/800?random=5",
-  "https://picsum.photos/600/800?random=6",
-];
+<script setup>
+import { cards } from "~/data";
+const items = cards;
 </script>
 
 <template>
@@ -31,9 +25,9 @@ const items = [
       class: '-end-10',
     }"
     arrows
-    class="w-[90%] mx-auto"
+    class="w-full mx-auto"
     indicators
   >
-    <img :src="item" class="w-full" draggable="false" />
+    <Card :card="item" :key="item.id" />
   </UCarousel>
 </template>

@@ -36,7 +36,7 @@
         </div>
 
         <div v-if="activeIndex === index" class="faq-answer">
-          <blockquote>{{ item.answer }}</blockquote>
+          <p>{{ item.answer }}</p>
         </div>
       </div>
     </div>

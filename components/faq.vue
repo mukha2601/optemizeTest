@@ -17,4 +17,8 @@
 
 <script setup>
 import { faq } from "~/data";
+const activeIndex = ref(null);
+const toggle = (index) => {
+  activeIndex.value = activeIndex.value === index ? null : index;
+};
 </script>

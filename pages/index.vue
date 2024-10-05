@@ -1,4 +1,5 @@
 <template>
+  <Sidebar />
   <Section
     title="Топовые скидки"
     class="bg-[#F0F6F6] text-[#248888] font-bold p-6 rounded-lg"
@@ -27,7 +28,7 @@
     </p>
     <span>Развернуть текст</span>
   </Section>
-
+  <Faq />
 </template>
 
 <script setup>
@@ -37,7 +38,6 @@ import Nutrition from "~/components/nutrition.vue";
 import Shops from "~/components/shops.vue";
 
 const components = { Network, Nutrition, Shops };
-
 const state = reactive({
   tabs: [
     { ru: "Питание", en: "Nutrition" },
@@ -46,16 +46,5 @@ const state = reactive({
   ],
   component: "Nutrition",
 });
-
 const currentComponent = computed(() => components[state.component]);
-
-
-
-// Aktive elementni boshqarish uchun
-const activeIndex = ref(null);
-
-// Savolni ochish/yopish funksiyasi
-const toggle = (index) => {
-  activeIndex.value = activeIndex.value === index ? null : index;
-};
 </script>

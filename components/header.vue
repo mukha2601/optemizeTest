@@ -1,6 +1,8 @@
 <template>
   <div class="w-full border-b-2 border-dotted border-red-200">
-    <header class="container flex justify-between items-center h-16">
+    <header
+      class="container flex justify-between items-center h-16  max-lg:p-4"
+    >
       <NuxtLink to="/"><span class="font-bold text-3xl">Logo</span></NuxtLink>
       <div class="flex items-center">
         <UIcon
@@ -33,9 +35,12 @@
             {{ lang }}
           </button>
           <button
-            class="p-2 me-4 rounded-lg bg-[#FF2E4C] text-white max-sm:text-xs"
+            class="max-lg:hidden p-2 me-4 rounded-lg bg-[#FF2E4C] text-white max-sm:text-xs"
           >
             Добавить скидку
+          </button>
+          <button class="lg:hidden ">
+            <UIcon name="gg:menu" class="w-5 h-5" />
           </button>
         </div>
       </div>
@@ -56,3 +61,5 @@ const navbar = [
   { key: "Cashback", label: "Кешбэк", link: "/" },
 ];
 </script>
+
+<style scoped></style>

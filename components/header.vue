@@ -1,8 +1,6 @@
 <template>
   <div class="w-full border-b-2 border-dotted border-red-200">
-    <header
-      class="container flex justify-between items-center h-16  max-lg:p-4"
-    >
+    <header class="container flex justify-between items-center h-16 max-lg:p-4">
       <NuxtLink to="/"><span class="font-bold text-3xl">Logo</span></NuxtLink>
       <div class="flex items-center">
         <UIcon
@@ -35,11 +33,18 @@
             {{ lang }}
           </button>
           <button
-            class="max-lg:hidden p-2 me-4 rounded-lg bg-[#FF2E4C] text-white max-sm:text-xs"
+            class="relative max-lg:hidden px-5 pe-7 p-2 bg-red-500 text-white font-semibold rounded-xl flex items-center justify-center hover:bg-red-600 transition-colors duration-300"
           >
             Добавить скидку
+            <span
+              class="absolute -right-2 border-2 border-white bg-gray-500 w-5 h-5 rounded-full flex items-center justify-center text-white transition-all duration-300 circle"
+            >
+              <span class="plus opacity-0 transition-opacity duration-300"
+                >+</span
+              >
+            </span>
           </button>
-          <button class="lg:hidden ">
+          <button class="lg:hidden">
             <UIcon name="gg:menu" class="w-5 h-5" />
           </button>
         </div>
@@ -62,4 +67,26 @@ const navbar = [
 ];
 </script>
 
-<style scoped></style>
+<style scoped>
+.circle {
+  width: 0.75rem; /* Kichik doira o'lchami */
+  height: 0.75rem;
+  transition: all 0.3s ease; /* Silliq animatsiya */
+  font-size: 0; /* '+' belgisini ko'rinmas qilish */
+}
+
+button:hover .circle {
+  width: 2rem; /* Doira kattalashadi */
+  height: 2rem;
+  font-size: 1rem; /* '+' belgisini ko'rsatish uchun kattalashtirish */
+}
+
+.plus {
+  opacity: 0; /* Standart holatda ko'rinmaydi */
+  transition: opacity 0.3s ease; /* Silliq paydo bo'lish */
+}
+
+button:hover .plus {
+  opacity: 1; /* Hover qilinganda '+' belgisi ko'rinadi */
+}
+</style>

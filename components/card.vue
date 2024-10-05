@@ -1,5 +1,7 @@
 <template>
-  <article class="relative w-full border-2 rounded-lg overflow-hidden bg-white mb-4">
+  <article
+    class="relative w-full border-2 rounded-lg overflow-hidden bg-white mb-4 hover:border-green-600 cursor-pointer hover:shadow-lg"
+  >
     <div class="w-full h-36 overflow-hidden">
       <img :src="card?.img" alt="" class="w-full h-full object-cover" />
     </div>
@@ -9,7 +11,7 @@
     >
     <div class="p-2 flex flex-col gap-3">
       <p>{{ card.name }}</p>
-      <h1 class="font-bold">{{ card.text }}</h1>
+      <h1 class="font-bold hover:text-[#248888]">{{ card.text }}</h1>
       <div class="flex justify-between">
         <p class="text-sm">Скидки</p>
         <div>
@@ -32,3 +34,9 @@ const props = defineProps({
   },
 });
 </script>
+
+<style scoped>
+p:hover {
+  color: red;
+}
+</style>

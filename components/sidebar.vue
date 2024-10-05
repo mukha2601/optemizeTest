@@ -11,7 +11,19 @@
             </li>
           </ul>
         </nav>
-        
+        <div class="mt-12 flex justify-center gap-7">
+          <button>
+            <UIcon name="icon-park:telegram" class="w-5 h-5" />
+          </button>
+          <button>
+            <UIcon name="lucide:user-round-plus" class="w-5 h-5" />
+          </button>
+          <button
+            class="p-2 me-4 rounded-lg bg-[#FF2E4C] text-white max-sm:text-xs"
+          >
+            Добавить скидку
+          </button>
+        </div>
       </div>
     </aside>
   </teleport>

@@ -9,8 +9,7 @@
 
 body {
   color: black;
-  /* color: rgba(0, 0, 0, 0.525); */
-  background-color: aqua;
+  background-color: white;
   font-family: "Play", sans-serif;
   font-weight: 400;
   font-style: normal;

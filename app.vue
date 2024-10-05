@@ -9,13 +9,13 @@
 
 body {
   color: black;
-  background-color: brown;
+  background-color: aqua;
   font-family: "Play", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 .container {
-  max-width: 1280px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 </style>

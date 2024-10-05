@@ -17,15 +17,14 @@ const items = cards;
     :prev-button="{
       color: 'gray',
       icon: 'i-heroicons-arrow-left-20-solid',
-      class: '-start-10',
+      class: '-start-11',
     }"
     :next-button="{
       color: 'gray',
       icon: 'i-heroicons-arrow-right-20-solid',
-      class: '-end-10',
+      class: '-end-11',
     }"
     arrows
-    class="w-full mx-auto"
     indicators
   >
     <Card :card="item" :key="item.id" />

@@ -13,8 +13,8 @@
       <div class="flex justify-between">
         <p class="text-sm">Скидки</p>
         <div>
-          <span class="p-2 py-1 rounded-md border-2">Кешбэк</span
-          ><span class="p-2 py-1 rounded-md border-2 bg-gray-400 ms-2">{{
+          <span class="p-2 py-1 rounded-md border-2 text-sm">Кешбэк</span
+          ><span class="p-2 py-1 rounded-md bg-gray-400 text-sm">{{
             card.stock
           }}</span>
         </div>

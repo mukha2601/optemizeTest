@@ -1,7 +1,7 @@
 <template>
   <aside class="w-full bg-[#F0F6F6]  p-4">
     <Section title="Скидки дня" :subtitle="`${cards.length} предложения`">
-      <div v-for="card in cards" class="grid max-sm:grid-cols-2 grid-cols-1">
+      <div v-for="card in cards" class="grid max-sm:grid-cols-2">
         <Card :card="card" :key="card.id" />
       </div>
     </Section>

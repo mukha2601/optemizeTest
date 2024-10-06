@@ -1,5 +1,6 @@
 <template>
-  <Header />
+  <Header :toggleSidebar="toggleSidebar" />
+  <Sidebar v-if="sidebarOpen" />
   <div
     id="main"
     class="container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 overflow-hidden"
@@ -10,3 +11,10 @@
     </div>
   </div>
 </template>
+
+<script setup>
+const sidebarOpen = ref(false);
+const toggleSidebar = () => {
+  sidebarOpen.value = !sidebarOpen.value;
+};
+</script>

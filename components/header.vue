@@ -44,7 +44,7 @@
               >
             </span>
           </button>
-          <button class="lg:hidden">
+          <button class="lg:hidden" @click="toggleSidebar">
             <UIcon name="gg:menu" class="w-5 h-5" />
           </button>
         </div>
@@ -54,6 +54,10 @@
 </template>
 
 <script setup>
+const props = defineProps({
+  toggleSidebar: Function,
+});
+
 let lang = ref("Ry");
 const toggleLang = () => {
   lang.value = lang.value === "En" ? "Ry" : "En";

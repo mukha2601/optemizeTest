@@ -1,6 +1,5 @@
 <template>
-  <Sidebar v-if="false" />
-  <Section class="bg-[#F0F6F6] font-bold p-4  rounded-lg">
+  <Section class="bg-[#F0F6F6] font-bold p-4 rounded-lg">
     <h1 class="text-[#248888] text-3xl pb-4 border-b-2">Топовые скидки</h1>
     <button
       v-for="tab in state.tabs"

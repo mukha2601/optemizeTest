@@ -1,5 +1,5 @@
 <template>
-  <teleport to="#main">
+  <!-- <teleport to="#main"> -->
     <aside class="w-full h-screen bg-[rgba(0,0,0,0.525)] absolute z-10">
       <div class="w-[85%] absolute right-0 h-full bg-white p-4">
         <nav class="flex flex-col gap-6 items-center">
@@ -26,7 +26,7 @@
         </div>
       </div>
     </aside>
-  </teleport>
+  <!-- </teleport> -->
 </template>
 
 <script setup>

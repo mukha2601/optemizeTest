@@ -1,30 +1,20 @@
 <template>
-  <article
-    class="relative w-full h-full border-2 rounded-lg overflow-hidden bg-white hover:border-green-600 cursor-pointer hover:shadow-lg"
-  >
-    <div class="w-full h-28 sm:h-36 overflow-hidden">
-      <img :src="card?.img" alt="" class="w-full h-full object-cover" />
+  <article class="card">
+    <div class="image-container">
+      <img :src="card?.img" alt="" class="card-image" />
     </div>
-    <span
-      v-if="card.term"
-      class="absolute top-1 left-1 px-2 p-1 rounded-md bg-red-200 text-xs text-red-500 font-bold"
-      >{{ card?.term }}</span
-    >
-    <div class="p-2 flex flex-col gap-2 sm:gap-3">
-      <p class="max-sm:text-[12px]">{{ card.name }}</p>
-      <h1 class="font-bold max-sm:text-[14px] hover:text-[#248888]">
-        {{ card.text }}
-      </h1>
-      <div class="sm:flex justify-between">
-        <p class="text-sm">Скидки</p>
-        <div>
-          <span class="p-2 py-1 rounded-md border-2 text-sm">Кешбэк</span
-          ><span class="p-2 py-1 rounded-md bg-gray-400 text-sm">{{
-            card.stock
-          }}</span>
+    <span v-if="card.term" class="term-badge">{{ card?.term }}</span>
+    <div class="content">
+      <p class="card-name">{{ card.name }}</p>
+      <h1 class="card-title">{{ card.text }}</h1>
+      <div class="discounts">
+        <p class="discount-label">Скидки</p>
+        <div class="cashback-stock">
+          <span class="cashback">Кешбэк</span>
+          <span class="stock">{{ card.stock }}</span>
         </div>
       </div>
-      <p class="text-xs">{{ card.type }}</p>
+      <p class="card-type">{{ card.type }}</p>
     </div>
   </article>
 </template>
@@ -41,5 +31,111 @@ const props = defineProps({
 <style scoped>
 p:hover {
   color: red;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 2px solid transparent;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background-color: white;
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  border-color: #16a34a;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-container {
+  width: 100%;
+  height: 7rem;
+  overflow: hidden;
+}
+
+@media (min-width: 640px) {
+  .image-container {
+    height: 9rem;
+  }
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.term-badge {
+  position: absolute;
+  top: 0.25rem;
+  left: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  background-color: #fecaca;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #ef4444;
+}
+
+.content {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .content {
+    gap: 0.75rem;
+  }
+}
+
+.card-name {
+  font-size: 12px;
+}
+
+.card-title {
+  font-weight: bold;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.card-title:hover {
+  color: #248888;
+}
+
+.discounts {
+  display: flex;
+  justify-content: space-between;
+}
+
+.discount-label {
+  font-size: 0.875rem;
+}
+
+.cashback-stock {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.cashback {
+  padding: 0.5rem 0.25rem;
+  border-radius: 0.375rem;
+  border: 2px solid transparent;
+  font-size: 0.875rem;
+}
+
+.stock {
+  padding: 0.5rem 0.25rem;
+  border-radius: 0.375rem;
+  background-color: #9ca3af;
+  font-size: 0.875rem;
+}
+
+.card-type {
+  font-size: 0.75rem;
 }
 </style>

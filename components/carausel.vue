@@ -1,6 +1,6 @@
 <script setup>
 import { cards } from "~/data";
-const items = cards;
+const items = cards.reverse();
 </script>
 
 <template>

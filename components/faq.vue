@@ -1,17 +1,14 @@
 <template>
   <Section title="FAQ">
     <div v-for="item in faq">
-      <details :key="item.id" class="border-b-2 mb-6">
-        <summary class="cursor-pointer">
-          <div class="flex justify-between">
+      <details :key="item.id" class="faq-item">
+        <summary class="faq-summary">
+          <div class="summary-content">
             {{ item.question }}
-            <UIcon
-              name="material-symbols-light:add-rounded"
-              class="w-12 h-12 ms-6 text-gray-300 transition-transform duration-300 rotate-icon"
-            />
+            <UIcon name="material-symbols-light:add-rounded" class="icon" />
           </div>
         </summary>
-        <blockquote class="text-gray-600 ps-12 mt-4 mb-6">
+        <blockquote class="faq-answer">
           {{ item.answer }}
         </blockquote>
       </details>
@@ -34,5 +31,48 @@ details summary::-webkit-details-marker {
 
 details[open] .rotate-icon {
   transform: rotate(45deg);
+}
+
+.faq-item {
+  border-bottom: 2px solid #e5e7eb;
+  margin-bottom: 1.5rem;
+}
+
+.faq-summary {
+  cursor: pointer;
+}
+
+.summary-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.summary-content:hover {
+  color: #023131;
+  font-weight: 700;
+  transition: transform 0.3s ease;
+}
+
+.icon {
+  width: 3rem;
+  height: 3rem;
+  margin-left: 1.5rem;
+  color: #d1d5db;
+  transition: transform 0.3s ease;
+}
+
+details[open] .summary-content {
+  font-weight: 700;
+}
+
+details[open] .icon {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  color: #4b5563;
+  padding-left: 3rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
 }
 </style>

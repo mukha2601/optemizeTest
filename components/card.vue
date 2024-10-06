@@ -34,10 +34,11 @@ p:hover {
 }
 
 .card {
+  user-select: none;
   position: relative;
   width: 100%;
   height: 100%;
-  border: 2px solid transparent;
+  border: 2px solid rgb(210, 209, 209);
   border-radius: 0.5rem;
   overflow: hidden;
   background-color: white;
@@ -86,10 +87,23 @@ p:hover {
   flex-direction: column;
   gap: 0.5rem;
 }
+.card-title {
+  font-weight: bold;
+  font-size: 12px;
+  transition: color 0.3s ease;
+}
 
 @media (min-width: 640px) {
   .content {
     gap: 0.75rem;
+  }
+  .discounts {
+    display: flex;
+  }
+  .card-title {
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
   }
 }
 
@@ -97,41 +111,37 @@ p:hover {
   font-size: 12px;
 }
 
-.card-title {
-  font-weight: bold;
-  font-size: 14px;
-  transition: color 0.3s ease;
-}
-
 .card-title:hover {
   color: #248888;
 }
 
 .discounts {
-  display: flex;
   justify-content: space-between;
+  align-items: center;
+  color: white;
 }
 
 .discount-label {
   font-size: 0.875rem;
+  color: black;
 }
 
 .cashback-stock {
   display: flex;
-  gap: 0.5rem;
 }
 
 .cashback {
-  padding: 0.5rem 0.25rem;
+  padding: 0.2rem 0.25rem;
   border-radius: 0.375rem;
-  border: 2px solid transparent;
+  border: 1px solid gray;
   font-size: 0.875rem;
+  color: black;
 }
 
 .stock {
-  padding: 0.5rem 0.25rem;
+  padding: 0.25rem 0.5rem;
   border-radius: 0.375rem;
-  background-color: #9ca3af;
+  background-color: #607282;
   font-size: 0.875rem;
 }
 

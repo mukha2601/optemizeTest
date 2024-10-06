@@ -1,34 +1,3 @@
-<template>
-  <!-- <teleport to="#main"> -->
-    <aside class="w-full h-screen bg-[rgba(0,0,0,0.525)] absolute z-10">
-      <div class="w-[85%] absolute right-0 h-full bg-white p-4">
-        <nav class="flex flex-col gap-6 items-center">
-          <ul v-for="item in navbar">
-            <li :key="item.key">
-              <NuxtLink :to="item.link" class="hover:text-red-500 text-xl">{{
-                item.label
-              }}</NuxtLink>
-            </li>
-          </ul>
-        </nav>
-        <div class="mt-12 flex justify-center gap-7">
-          <button>
-            <UIcon name="icon-park:telegram" class="w-5 h-5" />
-          </button>
-          <button>
-            <UIcon name="lucide:user-round-plus" class="w-5 h-5" />
-          </button>
-          <button
-            class="p-2 me-4 rounded-lg bg-[#FF2E4C] text-white max-sm:text-xs"
-          >
-            Добавить скидку
-          </button>
-        </div>
-      </div>
-    </aside>
-  <!-- </teleport> -->
-</template>
-
 <script setup>
 const navbar = [
   { key: "all", label: "Все предложения", link: "/" },
@@ -38,3 +7,90 @@ const navbar = [
   { key: "Cashback", label: "Кешбэк", link: "/" },
 ];
 </script>
+
+<template>
+  <aside class="sidebar-overlay">
+    <div class="sidebar-content">
+      <nav class="nav-container">
+        <ul v-for="item in navbar">
+          <li :key="item.key">
+            <NuxtLink :to="item.link" class="nav-link">
+              {{ item.label }}
+            </NuxtLink>
+          </li>
+        </ul>
+      </nav>
+      <div class="button-group">
+        <button>
+          <UIcon name="icon-park:telegram" class="icon" />
+        </button>
+        <button>
+          <UIcon name="lucide:user-round-plus" class="icon" />
+        </button>
+        <button class="discount-button">Добавить скидку</button>
+      </div>
+    </div>
+  </aside>
+</template>
+
+<style scoped>
+.sidebar-overlay {
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.525);
+  position: absolute;
+  z-index: 10;
+}
+
+.sidebar-content {
+  width: 85%;
+  position: absolute;
+  right: 0;
+  height: 100%;
+  background-color: white;
+  padding: 1rem;
+}
+
+.nav-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-link {
+  font-size: 1.25rem;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #ff2e4c;
+}
+
+.button-group {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.75rem;
+}
+
+.icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.discount-button {
+  padding: 0.5rem;
+  margin-right: 1rem;
+  border-radius: 0.5rem;
+  background-color: #ff2e4c;
+  color: white;
+  font-size: 0.875rem;
+}
+
+@media (max-width: 640px) {
+  .discount-button {
+    font-size: 0.75rem;
+  }
+}
+</style>

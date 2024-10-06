@@ -32,6 +32,18 @@ const showAllCards = () => {
 
 <style scoped>
 .circle {
+  position: absolute;
+  right: -0.5rem;
+  border: 2px solid white;
+  background-color: gray;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: all 0.3s ease;
   width: 0.75rem;
   height: 0.75rem;
   transition: all 0.3s ease;
@@ -46,7 +58,8 @@ button:hover .circle {
 
 .plus {
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: rotate(90deg);
 }
 
 button:hover .plus {
@@ -77,31 +90,11 @@ button:hover .plus {
   height: 3rem;
   background-color: white;
   font-weight: 600;
+  border: 1px solid gray;
   border-radius: 0.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: background-color 0.3s ease;
-}
-
-.circle {
-  position: absolute;
-  right: -0.5rem;
-  border: 2px solid white;
-  background-color: gray;
-  width: 1.25rem;
-  height: 1.25rem;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  transition: all 0.3s ease;
-}
-
-.plus {
-  opacity: 0;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  transform: rotate(90deg);
 }
 </style>
